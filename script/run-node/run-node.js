@@ -1,19 +1,11 @@
 const { execute, launchNode } = require("@jsenv/core")
-const {
-  projectFolder,
-  importMapFilenameRelative,
-  compileInto,
-  babelConfigMap,
-} = require("../../jsenv.config.js")
+const { projectFolder } = require("../../jsenv.config.js")
 const { getFromProcessArguments } = require("./getFromProcessArguments.js")
 
 const filenameRelative = getFromProcessArguments("file")
 
 execute({
   projectFolder,
-  importMapFilenameRelative,
-  compileInto,
-  babelConfigMap,
   compileGroupCount: 2,
   protocol: "http",
   launch: (options) =>
