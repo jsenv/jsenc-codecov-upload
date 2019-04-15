@@ -3,5 +3,4 @@ const { projectFolder } = require("../../jsenv.config.js")
 
 cover({
   projectFolder,
-  logCoverageTable: true,
 })

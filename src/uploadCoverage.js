@@ -16,6 +16,7 @@ export const uploadCoverage = ({
         options: {
           token,
           file: filename,
+          root: projectFolder,
         },
       },
       resolve,
