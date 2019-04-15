@@ -4,7 +4,7 @@ const upload = codecov.handleInput.upload
 
 export const uploadCoverage = ({
   projectFolder,
-  coverageFilenameRelative,
+  coverageFilenameRelative = "coverage/coverage-final.json",
   token = process.env.CODECOV_TOKEN,
 }) => {
   const filename = `${projectFolder}/${coverageFilenameRelative}`
