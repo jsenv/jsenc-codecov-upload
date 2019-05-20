@@ -1,6 +1,6 @@
 {
 	"name": "@jsenv/codecov-upload",
-	"version": "1.4.0",
+	"version": "1.5.0",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
@@ -26,7 +26,7 @@
 		"@jsenv/node-module-import-map": "1.2.0",
 		"@jsenv/prettier-config": "1.0.0",
 		"@jsenv/prettier-check-project": "1.10.0",
-		"@jsenv/codecov-upload": "1.2.0",
+		"@jsenv/codecov-upload": "1.4.0",
 		"babel-eslint": "11.0.0-beta.0",
 		"prettier": "1.16.3",
 		"eslint": "5.1.0",
