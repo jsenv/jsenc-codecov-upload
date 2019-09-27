@@ -5,4 +5,5 @@ generateImportMapForProjectPackage({
   projectPath,
   includeDevDependencies: true,
   importMapFile: true,
+  jsConfigFile: true,
 })

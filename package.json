@@ -1,6 +1,6 @@
 {
   "name": "@jsenv/codecov-upload",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -35,15 +35,15 @@
     "codecov": "3.6.1"
   },
   "devDependencies": {
-    "@jsenv/bundling": "5.15.0",
-    "@jsenv/codecov-upload": "1.7.0",
-    "@jsenv/eslint-config": "10.0.0",
-    "@jsenv/execution": "5.11.0",
-    "@jsenv/node-launcher": "4.15.0",
+    "@jsenv/bundling": "6.1.0",
+    "@jsenv/codecov-upload": "1.8.0",
+    "@jsenv/eslint-config": "10.1.0",
+    "@jsenv/execution": "5.12.0",
+    "@jsenv/node-launcher": "4.16.0",
     "@jsenv/node-module-import-map": "7.0.0",
     "@jsenv/prettier-config": "1.0.0",
-    "@jsenv/prettier-check-project": "3.4.0",
-    "@jsenv/testing": "3.2.0",
+    "@jsenv/prettier-check-project": "3.5.0",
+    "@jsenv/testing": "3.3.0",
     "babel-eslint": "11.0.0-beta.0",
     "prettier": "1.18.2",
     "eslint": "6.4.0",
