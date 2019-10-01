@@ -20,7 +20,7 @@ jobs:
           node-version: 12.x
       - name: install, build, and test
         run: |
-          node ./scripts/log-github-process-env.js
+          node ./script/log-github-process-env.js
           npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
           npm install
           npm run eslint-check
