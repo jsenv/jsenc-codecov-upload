@@ -1,20 +1,27 @@
+import { normalizeDirectoryUrl } from "./internal/normalizeDirectoryUrl.js"
+import { resolveUrl, urlToFilePath } from "./internal/urlUtils.js"
+
 const codecov = import.meta.require("codecov")
 
 const upload = codecov.handleInput.upload
 
 export const uploadCoverage = ({
-  projectPath,
-  coverageRelativePath = "/coverage/coverage-final.json",
+  projectDirectoryUrl,
+  coverageJsonFileRelativeUrl = "./coverage/coverage-final.json",
   token = process.env.CODECOV_TOKEN,
   ...rest
 }) => {
-  const filename = `${projectPath}${coverageRelativePath}`
+  projectDirectoryUrl = normalizeDirectoryUrl(projectDirectoryUrl)
+  const coverageJsonFileUrl = resolveUrl(coverageJsonFileRelativeUrl, projectDirectoryUrl)
+  const coverageJsonFilePath = urlToFilePath(coverageJsonFileUrl)
+  const projectDirectoryPath = urlToFilePath(projectDirectoryUrl)
+
   const options = {
     ...rest,
     ...(process.env.GITHUB_REPOSITORY ? readOptionsFromGithubAction() : {}),
     token,
-    file: filename,
-    root: projectPath,
+    file: coverageJsonFilePath,
+    root: projectDirectoryPath,
   }
 
   return new Promise((resolve, reject) => {

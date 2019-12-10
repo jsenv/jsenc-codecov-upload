@@ -1,6 +1,14 @@
-const { test } = require("@jsenv/testing")
-const { projectPath } = require("../../jsenv.config.js")
+const { executeTestPlan, launchNode } = require("@jsenv/core")
+const jsenvConfig = require("../../jsenv.config.js")
 
-test({
-  projectPath,
+executeTestPlan({
+  ...jsenvConfig,
+  testPlan: {
+    "test/**/*.test.js": {
+      node: {
+        launch: launchNode,
+      },
+    },
+  },
+  coverage: process.argv.includes("--coverage"),
 })

@@ -1,6 +1,7 @@
 {
   "name": "@jsenv/codecov-upload",
-  "version": "2.0.0",
+  "description": "Upload coverage to codecov.io during a github workflow",
+  "version": "3.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -19,9 +20,9 @@
   ],
   "scripts": {
     "test": "node ./script/test/test.js",
+    "test-with-coverage": "node ./script/test/test.js --coverage",
     "eslint-check": "eslint .",
     "prettier-check": "node ./script/prettier-check/prettier-check.js",
-    "generate-coverage": "node ./script/generate-coverage/generate-coverage.js",
     "upload-coverage": "node ./script/upload-coverage/upload-coverage.js",
     "generate-commonjs-bundle": "node ./script/generate-commonjs-bundle/generate-commonjs-bundle.js",
     "generate-import-map": "node ./script/generate-import-map/generate-import-map.js",
@@ -36,18 +37,17 @@
     "codecov": "3.6.1"
   },
   "devDependencies": {
-    "@jsenv/bundling": "6.4.0",
-    "@jsenv/codecov-upload": "1.9.0",
-    "@jsenv/eslint-config": "10.2.0",
-    "@jsenv/execution": "6.2.0",
-    "@jsenv/node-launcher": "4.21.0",
-    "@jsenv/node-module-import-map": "7.2.0",
-    "@jsenv/prettier-config": "1.0.0",
-    "@jsenv/prettier-check-project": "3.5.0",
-    "@jsenv/testing": "3.7.0",
-    "babel-eslint": "11.0.0-beta.0",
-    "prettier": "1.18.2",
-    "eslint": "6.5.1",
+    "@jsenv/assert": "1.1.1",
+    "@jsenv/codecov-upload": "2.0.0",
+    "@jsenv/core": "10.0.0-alpha.11",
+    "@jsenv/eslint-config": "12.0.0",
+    "@jsenv/github-release-package": "1.1.1",
+    "@jsenv/node-module-import-map": "9.0.0",
+    "@jsenv/package-publish": "1.1.0",
+    "@jsenv/prettier-check-project": "4.0.0",
+    "@jsenv/prettier-config": "1.1.0",
+    "eslint": "6.7.2",
+    "prettier": "1.19.1",
     "rimraf": "3.0.0"
   }
 }

@@ -1,9 +1,9 @@
-/.dist/
-/dist/
+/.jsenv/
 /coverage/
+/dist/importMap.json
 /node_modules/
 /importMap.json
 /jsconfig.json
-/secrets.json
 /package-lock.json
+/secrets.json
 /yarn.lock

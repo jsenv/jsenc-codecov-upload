@@ -1,7 +1,8 @@
-/.dist/
+/.jsenv/
 /coverage/
 /dist/
 /node_modules/
 /importMap.json
 /jsconfig.json
 /package-lock.json
+/package.json

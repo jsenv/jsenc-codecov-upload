@@ -1,6 +1,6 @@
-const { generateCommonJsBundle } = require("@jsenv/bundling")
-const { projectPath } = require("../../jsenv.config.js")
+const { generateCommonJsBundleForNode } = require("@jsenv/core")
+const jsenvConfig = require("../../jsenv.config.js")
 
-generateCommonJsBundle({
-  projectPath,
+generateCommonJsBundleForNode({
+  ...jsenvConfig,
 })
