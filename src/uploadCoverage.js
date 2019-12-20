@@ -1,5 +1,4 @@
-import { normalizeDirectoryUrl } from "./internal/normalizeDirectoryUrl.js"
-import { resolveUrl, urlToFilePath } from "./internal/urlUtils.js"
+import { assertAndNormalizeDirectoryUrl, resolveUrl, urlToFilePath } from "@jsenv/util"
 
 const codecov = import.meta.require("codecov")
 
@@ -11,7 +10,7 @@ export const uploadCoverage = ({
   token = process.env.CODECOV_TOKEN,
   ...rest
 }) => {
-  projectDirectoryUrl = normalizeDirectoryUrl(projectDirectoryUrl)
+  projectDirectoryUrl = assertAndNormalizeDirectoryUrl(projectDirectoryUrl)
   const coverageJsonFileUrl = resolveUrl(coverageJsonFileRelativeUrl, projectDirectoryUrl)
   const coverageJsonFilePath = urlToFilePath(coverageJsonFileUrl)
   const projectDirectoryPath = urlToFilePath(projectDirectoryUrl)
