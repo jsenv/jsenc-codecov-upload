@@ -1,7 +1,7 @@
 {
   "name": "@jsenv/codecov-upload",
   "description": "Upload coverage to codecov.io during a github workflow",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -34,17 +34,18 @@
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
   "dependencies": {
+    "@jsenv/util": "1.2.0",
     "codecov": "3.6.1"
   },
   "devDependencies": {
     "@jsenv/assert": "1.1.1",
     "@jsenv/codecov-upload": "3.0.0",
-    "@jsenv/core": "10.0.0-alpha.11",
+    "@jsenv/core": "10.3.3",
     "@jsenv/eslint-config": "12.0.0",
     "@jsenv/github-release-package": "1.1.1",
-    "@jsenv/node-module-import-map": "9.0.0",
+    "@jsenv/node-module-import-map": "9.4.0",
     "@jsenv/package-publish": "1.1.0",
-    "@jsenv/prettier-check-project": "4.0.0",
+    "@jsenv/prettier-check-project": "4.2.0",
     "@jsenv/prettier-config": "1.1.0",
     "eslint": "6.7.2",
     "prettier": "1.19.1",

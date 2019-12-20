@@ -9,9 +9,6 @@
       "program": "${file}",
       "autoAttachChildProcesses": true,
       "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "/*": "${workspaceRoot}/*"
-      },
       "smartStep": true,
       "skipFiles": [
         // force-array-multiline
@@ -28,9 +25,6 @@
       "args": ["--file=${relativeFile}"],
       "autoAttachChildProcesses": true,
       "sourceMaps": true,
-      "sourceMapPathOverrides": {
-        "/*": "${workspaceRoot}/*"
-      },
       "smartStep": true,
       "skipFiles": [
         // force-array-multiline
