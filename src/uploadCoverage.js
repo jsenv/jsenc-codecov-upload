@@ -1,6 +1,8 @@
-import { assertAndNormalizeDirectoryUrl, resolveUrl, urlToFilePath } from "@jsenv/util"
+import { createRequire } from "module"
+import { assertAndNormalizeDirectoryUrl, resolveUrl, urlToFileSystemPath } from "@jsenv/util"
 
-const codecov = import.meta.require("codecov")
+const require = createRequire(import.meta.url)
+const codecov = require("codecov")
 
 const upload = codecov.handleInput.upload
 
@@ -12,15 +14,13 @@ export const uploadCoverage = ({
 }) => {
   projectDirectoryUrl = assertAndNormalizeDirectoryUrl(projectDirectoryUrl)
   const coverageJsonFileUrl = resolveUrl(coverageJsonFileRelativeUrl, projectDirectoryUrl)
-  const coverageJsonFilePath = urlToFilePath(coverageJsonFileUrl)
-  const projectDirectoryPath = urlToFilePath(projectDirectoryUrl)
 
   const options = {
     ...rest,
     ...(process.env.GITHUB_REPOSITORY ? readOptionsFromGithubAction() : {}),
     token,
-    file: coverageJsonFilePath,
-    root: projectDirectoryPath,
+    file: urlToFileSystemPath(coverageJsonFileUrl),
+    root: urlToFileSystemPath(projectDirectoryUrl),
   }
 
   return new Promise((resolve, reject) => {
