@@ -1,6 +1,6 @@
 {
   "name": "@jsenv/codecov-upload",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description": "Upload coverage to codecov.io during a github workflow.",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,12 @@
     "registry": "https://npm.pkg.github.com"
   },
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "require": "./dist/commonjs/main.cjs"
+    }
+  },
   "module": "index.js",
   "main": "dist/commonjs/main.cjs",
   "files": [
