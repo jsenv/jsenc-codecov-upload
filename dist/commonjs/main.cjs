@@ -9,7 +9,7 @@ require('crypto');
 require('path');
 var util = require('util');
 
-// eslint-disable-next-line import/no-unresolved
+/* global require, __filename */
 const nodeRequire = require;
 const filenameContainsBackSlashes = __filename.indexOf("\\") > -1;
 const url = filenameContainsBackSlashes ? `file:///${__filename.replace(/\\/g, "/")}` : `file://${__filename}`;
@@ -109,7 +109,7 @@ const codecov = require$1("codecov");
 const upload = codecov.handleInput.upload;
 const uploadCoverage = ({
   projectDirectoryUrl,
-  coverageJsonFileRelativeUrl = "./coverage/coverage-final.json",
+  coverageJsonFileRelativeUrl = "./coverage/coverage.json",
   token = process.env.CODECOV_TOKEN,
   ...rest
 }) => {
