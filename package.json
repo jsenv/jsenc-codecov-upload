@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@jsenv/util": "3.5.2",
-    "codecov": "3.7.0"
+    "codecov": "3.7.1"
   },
   "devDependencies": {
     "@jsenv/assert": "2.1.0",
