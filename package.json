@@ -1,6 +1,6 @@
 {
   "name": "@jsenv/codecov-upload",
-  "version": "3.4.3",
+  "version": "3.5.0",
   "description": "Upload coverage to codecov.io during a github workflow.",
   "license": "MIT",
   "repository": {
@@ -8,20 +8,16 @@
     "url": "https://github.com/jsenv/jsenv-codecov-upload"
   },
   "publishConfig": {
-    "access": "public",
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
   "type": "module",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./dist/commonjs/main.cjs"
+      "import": "./index.js"
     }
   },
   "module": "index.js",
-  "main": "dist/commonjs/main.cjs",
   "files": [
-    "/dist/",
     "/src/",
     "/index.js"
   ],
@@ -33,26 +29,26 @@
     "prettier-format-stage": "npm run prettier-format -- --staged",
     "prettier-check": "npm run prettier-format -- --dry-run",
     "upload-coverage": "node ./script/upload-coverage/upload-coverage.js",
-    "generate-commonjs-bundle": "node ./script/generate-commonjs-bundle/generate-commonjs-bundle.js",
     "generate-import-map": "node ./script/generate-import-map/generate-import-map.js",
-    "dist": "npm run generate-commonjs-bundle",
     "postinstall": "npm run generate-import-map",
-    "prepublishOnly": "node ./script/transform-package/remove-postinstall.js && npm run dist",
+    "prepublishOnly": "node ./script/transform-package/remove-postinstall.js",
     "postpublish": "node ./script/transform-package/restore-postinstall.js"
   },
   "dependencies": {
-    "@jsenv/util": "3.10.0",
-    "codecov": "3.8.1"
+    "@jsenv/util": "4.1.1",
+    "codecov": "3.8.3"
   },
   "devDependencies": {
-    "@jsenv/assert": "2.2.1",
-    "@jsenv/core": "16.5.1",
-    "@jsenv/eslint-config": "12.7.0",
-    "@jsenv/github-release-package": "1.2.2",
-    "@jsenv/node-module-import-map": "12.2.0",
-    "@jsenv/package-publish": "1.5.1",
+    "@jsenv/assert": "2.2.5",
+    "@jsenv/core": "19.0.1",
+    "@jsenv/eslint-config": "15.0.1",
+    "@jsenv/github-release-package": "1.2.3",
+    "@jsenv/node-module-import-map": "13.6.1",
+    "@jsenv/importmap-eslint-resolver": "5.0.0",
+    "@jsenv/package-publish": "1.6.2",
     "@jsenv/prettier-check-project": "5.6.1",
-    "eslint": "7.12.1",
-    "prettier": "2.1.2"
+    "eslint": "7.31.0",
+    "eslint-plugin-import": "2.23.4",
+    "prettier": "2.3.2"
   }
 }
